@@ -36,6 +36,12 @@ resource "aws_eip" "gw" {
   depends_on = [aws_internet_gateway.gw]
 }
 
+resource "aws_nat_gateway" "gw" {
+  count         = var.az_count
+  subnet_id     = element(aws_subnet.public.*.id, count.index)
+  allocation_id = element(aws_eip.gw.*.id, count.index)
+}
+
 resource "aws_route_table" "private" {
   count  = var.az_count
   vpc_id = aws_vpc.main.id
