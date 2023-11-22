@@ -40,6 +40,11 @@ variable "app_count" {
   default     = 3
 }
 
+variable "health_check_path" {
+  description = "The path to use for the health check"
+  default     = "/"
+}
+
 variable "fargate_cpu" {
   description = "The amount of CPU to allocate to each Fargate task"
   default     = 1024
