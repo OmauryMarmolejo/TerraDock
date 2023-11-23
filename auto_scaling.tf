@@ -47,7 +47,7 @@ resource "aws_appautoscaling_policy" "down" {
   depends_on = [aws_appautoscaling_target.target]
 }
 
-resource "aws_cloudwatch_metric" "service_cpu_high" {
+resource "aws_cloudwatch_metric_alarm" "service_cpu_high" {
   alarm_name          = "cb_cpu_utilization_high"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = "2"
@@ -65,7 +65,7 @@ resource "aws_cloudwatch_metric" "service_cpu_high" {
   alarm_actions = [aws_appautoscaling_policy.up.arn]
 }
 
-resource "aws_cloudwatch_metric" "service_cpu_low" {
+resource "aws_cloudwatch_metric_alarm" "service_cpu_low" {
   alarm_name          = "cb_cpu_utilization_low"
   comparison_operator = "LessThanOrEqualToThreshold"
   evaluation_periods  = "2"
