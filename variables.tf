@@ -27,7 +27,6 @@ variable "az_count" {
 
 variable "app_image" {
   description = "The Docker image to use for the app"
-  default     = "bradfordhamilton/crystal_blockchain:latest"
 }
 
 variable "app_port" {
