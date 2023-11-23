@@ -10,8 +10,6 @@ TerraDock is a Terraform project for deploying a scalable and resilient Dockeriz
 - [How to Use](#how-to-use)
 - [Variables](#variables)
 - [Outputs](#outputs)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
